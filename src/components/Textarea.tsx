@@ -23,7 +23,7 @@ export const Textarea = () => {
   return (
     <div className="flex justify-center w-full p-8 gap-8">
       <textarea
-        className="p-2.5 flex-auto h-96 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 font-mono"
+        className="flex-auto h-96 p-2.5 font-mono text-sm text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto focus:ring-blue-500 focus:border-blue-500 "
         value={inputText}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           setInputText(e.target.value)
@@ -31,7 +31,7 @@ export const Textarea = () => {
         spellCheck="false"
       />
       <textarea
-        className="flex-auto h-96 p-2.5 text-sm text-gray-900 rounded-lg border border-gray-300 font-mono"
+        className="flex-auto h-96 p-2.5 font-mono text-sm text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto"
         value={formattedText}
         disabled
         spellCheck="false"
