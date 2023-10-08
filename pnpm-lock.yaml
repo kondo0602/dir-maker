@@ -29,6 +29,9 @@ dependencies:
   react:
     specifier: ^18.0.0
     version: 18.2.0
+  react-area:
+    specifier: 0.1.1-alpha.6
+    version: 0.1.1-alpha.6(react@18.2.0)
   react-dom:
     specifier: ^18.0.0
     version: 18.2.0(react@18.2.0)
@@ -3054,6 +3057,14 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
     optional: true
+
+  /react-area@0.1.1-alpha.6(react@18.2.0):
+    resolution: {integrity: sha512-Y4UxUvHvUFfH8YyBXUqckQBfUS9vJK0t1yQIwvLxme4zsdl3Ax04fC8ypFDbyAD4mknbtGj5VdOY4YSi9mBScw==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /react-dom@18.2.0(react@18.2.0):
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
