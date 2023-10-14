@@ -1,5 +1,8 @@
 const separateLines = (text: string): string[] => {
-  return text.trim().split('\n');
+  return text
+    .trim()
+    .split('\n')
+    .filter((line) => line.trim() !== '');
 };
 
 const calculateDepth = (line: string): number => {
