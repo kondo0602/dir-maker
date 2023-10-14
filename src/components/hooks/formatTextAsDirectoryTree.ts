@@ -1,5 +1,3 @@
-let flagArray = [];
-
 const separateLines = (text: string): string[] => {
   return text.trim().split('\n');
 };
@@ -17,14 +15,14 @@ const isLast = (
     !nextLine ||
     nextLine.depth < line.depth ||
     subsequentLines.every((l) => l.depth > line.depth) ||
-    subsequentLines[subsequentLines.findIndex((l) => l.depth <= line.depth)]
-      .depth < line.depth
+    (subsequentLines[subsequentLines.findIndex((l) => l.depth <= line.depth)]
+      ?.depth ?? 0) < line.depth
   );
 };
 
 const formatLine = (
   line: { dirName: string; depth: number; isLast: boolean },
-  subsequentLines: { dirName: string; depth: number }[]
+  flagArray: number[]
 ): string => {
   let spaces = '';
 
@@ -33,7 +31,7 @@ const formatLine = (
   }
 
   const prefixChar = line.isLast ? '└─ ' : '├─ ';
-  flagArray[line.depth] = line.isLast ? 0 : flagArray[line.depth] + 1;
+  flagArray[line.depth] = line.isLast ? 0 : (flagArray[line.depth] || 0) + 1;
   const prefix = spaces + prefixChar;
 
   return line.dirName.replace(/^\s+/, prefix);
@@ -49,7 +47,8 @@ export const formatTextAsDirectoryTree = (text: string): string => {
       maxNewlineLength = currentLength;
     }
   }
-  flagArray = Array(maxNewlineLength).fill(0);
+  const flagArray = Array(maxNewlineLength).fill(0);
+
   return separateLines(text)
     .map((line) => {
       return {
@@ -63,6 +62,6 @@ export const formatTextAsDirectoryTree = (text: string): string => {
         isLast: isLast(line, array[index + 1], array.slice(index + 1)),
       };
     })
-    .map((line, index, array) => formatLine(line, array.slice(index + 1)))
+    .map((line) => formatLine(line, flagArray))
     .join('\n');
 };
