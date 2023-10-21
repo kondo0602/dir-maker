@@ -2,7 +2,7 @@ export const separateLines = (text: string): string[] => {
   return text.split('\n').filter((line) => line.trim() !== '');
 };
 
-const calculateDepth = (line: string): number => {
+export const calculateDepth = (line: string): number => {
   return line.match(/^\s+/)?.[0].length || 0;
 };
 
