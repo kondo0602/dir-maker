@@ -47,20 +47,8 @@ export const generatePrefix = (
 
 export const formatTextAsDirectoryTree = (text: string): string => {
   return separateLines(text)
-    .map((line) => {
-      return {
-        dirName: line,
-        depth: calculateDepth(line),
-      };
-    })
-    .map((line, index, array) => {
-      return {
-        ...line,
-        isLast: isLast(line, array[index + 1], array.slice(index + 1)),
-      };
-    })
-    .map((line, _, array) => {
-      return line.dirName.replace(/^\s+/, generatePrefix(line, array));
-    })
+    .map((line) => ({ dirName: line, depth: calculateDepth(line) }))
+    .map((line, index, array) => ({ ...line, isLast: isLast(line, array[index + 1], array.slice(index + 1))}))
+    .map((line, _, array) => (line.dirName.replace(/^\s+/, generatePrefix(line, array))))
     .join('\n');
 };

@@ -1,7 +1,6 @@
-import { useState, type ChangeEvent } from 'react';
-import { useDebounce } from 'ahooks';
-import { formatTextAsDirectoryTree } from './hooks/formatTextAsDirectoryTree';
 import { CopyButton } from './CopyButton';
+import { useFormat } from './hooks/useFormat';
+import type { ChangeEvent } from 'react';
 
 const defaultValue = `/
  src
@@ -17,9 +16,7 @@ const defaultValue = `/
 `;
 
 export const Textarea = () => {
-  const [inputText, setInputText] = useState<string>(defaultValue);
-  const debouncedValue = useDebounce(inputText, { wait: 500 });
-  const formattedText = formatTextAsDirectoryTree(debouncedValue);
+  const { inputText, setInputText, formattedText } = useFormat(defaultValue);
 
   return (
     <div className="grid grid-cols-2 gap-x-8 gap-y-2 w-full px-8">
