@@ -6,17 +6,18 @@ export const calculateDepth = (line: string): number => {
   return line.match(/^\s+/)?.[0].length || 0;
 };
 
-const isLast = (
+export const isLast = (
   line: { dirName: string; depth: number },
   nextLine: { dirName: string; depth: number } | undefined,
-  subsequentLines: { dirName: string; depth: number }[]
+  linesAfterCurrent: { dirName: string; depth: number }[]
 ): boolean => {
   return (
     !nextLine ||
     nextLine.depth < line.depth ||
-    subsequentLines.every((l) => l.depth > line.depth) ||
-    (subsequentLines[subsequentLines.findIndex((l) => l.depth <= line.depth)]
-      ?.depth ?? 0) < line.depth
+    linesAfterCurrent.every((l) => l.depth > line.depth) ||
+    (linesAfterCurrent[
+      linesAfterCurrent.findIndex((l) => l.depth <= line.depth)
+    ]?.depth ?? 0) < line.depth
   );
 };
 
