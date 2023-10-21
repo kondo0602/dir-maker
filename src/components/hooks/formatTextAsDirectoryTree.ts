@@ -21,7 +21,7 @@ export const isLast = (
   );
 };
 
-const generatePrefix = (
+export const generatePrefix = (
   line: { dirName: string; depth: number; isLast: boolean },
   allLines: { dirName: string; depth: number; isLast: boolean }[]
 ): string => {
@@ -45,15 +45,6 @@ const generatePrefix = (
   return prefix;
 };
 
-const formatLine = (
-  line: { dirName: string; depth: number; isLast: boolean },
-  array: any[]
-): string => {
-  const prefix = generatePrefix(line, array);
-
-  return line.dirName.replace(/^\s+/, prefix);
-};
-
 export const formatTextAsDirectoryTree = (text: string): string => {
   return separateLines(text)
     .map((line) => {
@@ -68,6 +59,8 @@ export const formatTextAsDirectoryTree = (text: string): string => {
         isLast: isLast(line, array[index + 1], array.slice(index + 1)),
       };
     })
-    .map((line, _, array) => formatLine(line, array))
+    .map((line, _, array) => {
+      return line.dirName.replace(/^\s+/, generatePrefix(line, array));
+    })
     .join('\n');
 };
