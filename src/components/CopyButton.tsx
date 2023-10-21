@@ -15,7 +15,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
       type="button"
       className={clsx(
         className,
-        ' text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center'
+        ' text-gray-700 border border-gray-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center'
       )}
       onClick={handleCopy}
     >
