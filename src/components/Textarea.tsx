@@ -21,7 +21,7 @@ export const Textarea = () => {
   return (
     <div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
       <textarea
-        className="md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-80 p-2.5 font-mono text-sm text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto focus:ring-blue-500 focus:border-blue-500 md:h-[32rem]"
+        className="md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-96 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto focus:ring-blue-500 focus:border-blue-500 md:h-[32rem]"
         value={inputText}
         onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
           setInputText(e.target.value)
@@ -33,7 +33,7 @@ export const Textarea = () => {
         text={formattedText}
       />
       <textarea
-        className="h-80 p-2.5 font-mono text-sm text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto md:col-start-2 md:col-span-1 md:row-start-2 md:h-[32rem]"
+        className="h-96 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto md:col-start-2 md:col-span-1 md:row-start-2 md:h-[32rem]"
         value={formattedText}
         disabled
         spellCheck="false"
