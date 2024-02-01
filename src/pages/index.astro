@@ -44,13 +44,12 @@ import { Textarea } from '../components/Textarea';
           Please input the plain text of your directory structure into the
           provided textarea.
           <br />
-           By adding a space at the beginning of the text, the formatted
-          directory structure will be displayed in the adjacent textarea!
+          By adding a space at the beginning of the text, the formatted directory
+          structure will be displayed in the adjacent textarea!
         </p>
       </div>
-      <!-- <div class="flex flex-col md:flex-row w-full gap-8"> -->
       <div class="flex flex-col w-full gap-8">
-        <Textarea client:load />
+        <Textarea client:only="react" />
       </div>
     </div>
   </body>
