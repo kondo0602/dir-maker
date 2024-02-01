@@ -1,6 +1,6 @@
 const getLines = (text: string, position: number) => text.substring(0, position).split('\n');
 
-export const useKeyDown = () => {
+export const useKeyDown = (setInputText: (text: string) => void) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     const { value, selectionStart, selectionEnd } = e.currentTarget;
 
@@ -12,13 +12,14 @@ export const useKeyDown = () => {
         e.currentTarget.value = newValue;
         e.currentTarget.selectionStart = selectionStart + 1;
         e.currentTarget.selectionEnd = selectionEnd + 1;
+        setInputText(newValue);
       } else {
         const linesBeforeCaret = getLines(value, selectionStart);
         const startLine = linesBeforeCaret.length - 1;
         const endLine = getLines(value, selectionEnd).length - 1;
         const startLineText = linesBeforeCaret[startLine];
 
-        e.currentTarget.value = value
+        const newValue = value
           .split('\n')
           .map((line, i) => {
             if (i >= startLine && i <= endLine) {
@@ -29,11 +30,13 @@ export const useKeyDown = () => {
           })
           .join('\n');
 
+        e.currentTarget.value = newValue;
         e.currentTarget.selectionStart = startLineText && /\S/.test(startLineText)
         ? selectionStart + 1
         : selectionStart;
 
         e.currentTarget.selectionEnd = selectionEnd + 1 * (endLine - startLine + 1)
+        setInputText(newValue);
       }
     }
   };

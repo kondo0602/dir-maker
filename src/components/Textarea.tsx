@@ -18,7 +18,7 @@ const defaultValue = `/
 export const Textarea = () => {
   const { inputText, setInputText, formattedText } = useFormat(defaultValue);
 
-  const handleKeyDown = useKeyDown();
+  const handleKeyDown = useKeyDown(setInputText);
 
   return (
     <div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
