@@ -1,12 +1,12 @@
 import { CopyButton } from './CopyButton';
-import { useEditor } from './hooks';
+import { useTextarea } from './hooks';
 
 export const Textarea = () => {
-  const { Editor, formattedText } = useEditor();
+  const { Textarea, formattedText } = useTextarea();
 
   return (
     <div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
-      {Editor}
+      {Textarea}
       <CopyButton
         className="justify-self-end hidden md:block md:col-start-2 md:col-span-1 md:row-start-1"
         text={formattedText}
