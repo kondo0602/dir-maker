@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { separateLines } from "./formatTextAsDirectoryTree";
+import { separateLines } from "../formatTextAsDirectoryTree/formatTextAsDirectoryTree";
 
 describe("separateLines", () => {
 	it("空文字を処理できること", () => {

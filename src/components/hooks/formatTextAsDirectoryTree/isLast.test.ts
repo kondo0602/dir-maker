@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isLast } from "./formatTextAsDirectoryTree";
+import { isLast } from "../formatTextAsDirectoryTree/formatTextAsDirectoryTree";
 
 describe("isLast", () => {
 	it("次の行が存在しない場合はtrueを返すこと", () => {

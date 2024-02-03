@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import PageHead from '../components/PageHead.astro';
-import { Textarea } from '../components/Textarea';
+import { FormattedTextDisplayArea } from '../components/FormattedTextDisplayArea';
 ---
 
 <html lang="en">
@@ -24,8 +24,10 @@ import { Textarea } from '../components/Textarea';
         directory structure!
       </p>
       <div class="flex flex-col w-full gap-8">
-        <Textarea client:only="react" />
+        <FormattedTextDisplayArea client:only="react" />
       </div>
     </main>
+
+    ../components/FormattedTextDisplayArea
   </body>
 </html>
