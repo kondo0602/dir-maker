@@ -28,9 +28,9 @@ export const useTextarea = () => {
 			highlight={(code: string) => code}
 			tabSize={1}
 			padding={10}
-			className={
-				"md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-80 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto focus:ring-blue-500 focus:border-blue-500 md:h-[32rem]"
-			}
+			className="md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-80 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg overflow-auto focus:ring-blue-500 focus:border-blue-500 md:h-[32rem]"
+			textareaClassName="h-full rounded-lg overflow-auto"
+			preClassName="h-full overflow-auto"
 		/>
 	);
 
