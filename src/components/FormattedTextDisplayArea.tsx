@@ -25,16 +25,19 @@ export const FormattedTextDisplayArea = () => {
 		return (
 			<>
 				{resultPrefixs.map((item,index) => <div key={`${dirData.dirName}-${index}`}>{item}</div>)}
-				<div onClick={() => handleDirectoryClick(dirData,dirIndex)}>{dirData.dirName}</div>
+				<div className="cursor-pointer hover:bg-slate-200 rounded" onClick={() => handleDirectoryClick(dirData,dirIndex)}>{dirData.dirName}</div>
 			</>
 		)
 	}
 
-	const handleDirectoryClick = (dirData:Directory, dirIndex:number) => {
-		console.log(dirData,dirIndex);
-		
+	const handleDirectoryClick = (dirData: Directory, dirIndex: number) => {
+		let copyText = ""
+		console.log(dirData, dirIndex);
+		copyText += dirData.dirName
+		if (navigator.clipboard) {
+			return navigator.clipboard.writeText(copyText)
+		}
 	}
-
 	return (
 		<div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
 			<CodeMirrorEditor value={text} onChangeValue={setText} />
