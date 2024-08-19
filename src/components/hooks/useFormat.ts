@@ -1,5 +1,5 @@
 import { useDebounce } from "ahooks";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formatTextAsDirectoryTree } from "./formatTextAsDirectoryTree/formatTextAsDirectoryTree";
 
 const defaultValue = `/
@@ -16,9 +16,10 @@ const defaultValue = `/
 `;
 
 export const useFormat = () => {
-	const [text, setText] = useState<string>(defaultValue);
+  const [text, setText] = useState<string>(defaultValue);
+  
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const formattedText = formatTextAsDirectoryTree(debouncedValue);
+	const {formattedDirData,formattedText} = formatTextAsDirectoryTree(debouncedValue);
 
-	return { text, setText, formattedText };
+	return { text, setText, formattedText,formattedDirData };
 };

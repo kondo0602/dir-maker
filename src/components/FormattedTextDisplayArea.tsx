@@ -3,7 +3,7 @@ import { CopyButton } from "./CopyButton";
 import { useFormat } from "./hooks/useFormat";
 
 export const FormattedTextDisplayArea = () => {
-	const { text, setText, formattedText } = useFormat();
+	const { text, setText, formattedText, formattedDirData } = useFormat();
 
 	return (
 		<div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
