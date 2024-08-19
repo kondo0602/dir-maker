@@ -25,9 +25,14 @@ export const FormattedTextDisplayArea = () => {
 		return (
 			<>
 				{resultPrefixs.map((item,index) => <div key={`${dirData.dirName}-${index}`}>{item}</div>)}
-				<div>{dirData.dirName}</div>
+				<div onClick={() => handleDirectoryClick(dirData,dirIndex)}>{dirData.dirName}</div>
 			</>
 		)
+	}
+
+	const handleDirectoryClick = (dirData:Directory, dirIndex:number) => {
+		console.log(dirData,dirIndex);
+		
 	}
 
 	return (
