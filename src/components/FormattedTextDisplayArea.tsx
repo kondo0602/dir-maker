@@ -9,22 +9,22 @@ export const FormattedTextDisplayArea = () => {
 	
 	const createDirectoryElement = (dirData: Directory, dirIndex: number) => {
 		
-		const resultPrefixs = []
+		const resultPrefixes = []
 		for (let i = 1; i < dirData.depth; i++) {
 			const previousLinesSameDepth = formattedDirData
 			.slice(0, formattedDirData.indexOf(dirData))
 			.reverse()
 			.find((l) => l.depth === i);
 		if (previousLinesSameDepth && !previousLinesSameDepth.isLast) {
-			resultPrefixs.push("│  ");
+			resultPrefixes.push("│  ");
 		} else {
-			resultPrefixs.push("   ");
+			resultPrefixes.push("   ");
 		}
 		}
-		if(dirData.depth !== 0 ) resultPrefixs.push(dirData.isLast ? "└─ " : "├─ ")
+		if(dirData.depth !== 0 ) resultPrefixes.push(dirData.isLast ? "└─ " : "├─ ")
 		return (
 			<>
-				{resultPrefixs.map((item,index) => <div key={`${dirData.dirName}-${index}`}>{item}</div>)}
+				{resultPrefixes.map((item,index) => <div key={`${dirData.dirName}-${index}`}>{item}</div>)}
 				<div className="cursor-pointer hover:bg-slate-200 rounded" onClick={() => handleDirectoryClick(dirData,dirIndex)}>{dirData.dirName}</div>
 			</>
 		)
