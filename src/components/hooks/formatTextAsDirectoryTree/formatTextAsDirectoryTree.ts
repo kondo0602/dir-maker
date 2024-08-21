@@ -47,7 +47,7 @@ export const generatePrefix = (
 	return prefix;
 };
 
-interface formatTextAsDirectoryTree {
+type formatTextAsDirectoryTree = {
 	formattedDirData: Directory[],
 	formattedText: string
 }
