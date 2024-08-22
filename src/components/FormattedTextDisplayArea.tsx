@@ -12,7 +12,7 @@ export const FormattedTextDisplayArea = () => {
 
 	useEffect(() => {
 		generateDirectories(text);
-	}, [text]);
+	}, [text, generateDirectories]);
 
 	return (
 		<div className="grid gap-x-8 gap-y-4 w-full px-8 md:grid-cols-2 md:gap-y-2">
