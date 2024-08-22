@@ -1,5 +1,3 @@
-import type { Directory } from "../../../types/directory";
-
 export const separateLines = (text: string): string[] => {
 	return text.split("\n").filter((line) => line.trim() !== "");
 };
@@ -48,19 +46,12 @@ export const generatePrefix = (
 };
 
 type formatTextAsDirectoryTree = {
-	directories: Directory[],
-	formattedText: string
-}
+	formattedText: string;
+};
 
-export const formatTextAsDirectoryTree = (text: string): formatTextAsDirectoryTree => {
-
-	const directories =	separateLines(text)
-		.map((line) => ({ dirName: line.trim(), depth: calculateDepth(line) }))
-		.map((line, index, array):Directory => ({
-			...line,
-			isLast: isLast(line, array[index + 1], array.slice(index + 1)),
-		}))
-	
+export const formatTextAsDirectoryTree = (
+	text: string,
+): formatTextAsDirectoryTree => {
 	const formattedText = separateLines(text)
 		.map((line) => ({ dirName: line, depth: calculateDepth(line) }))
 		.map((line, index, array) => ({
@@ -71,6 +62,6 @@ export const formatTextAsDirectoryTree = (text: string): formatTextAsDirectoryTr
 			line.dirName.replace(/^\s+/, generatePrefix(line, array)),
 		)
 		.join("\n");
-	
-	 return {directories, formattedText}
+
+	return { formattedText };
 };

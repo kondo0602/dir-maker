@@ -16,10 +16,10 @@ const defaultValue = `/
 `;
 
 export const useFormat = () => {
-  const [text, setText] = useState<string>(defaultValue);
-  
-	const debouncedValue = useDebounce(text, { wait: 300 });
-	const {directories,formattedText} = formatTextAsDirectoryTree(debouncedValue);
+	const [text, setText] = useState<string>(defaultValue);
 
-	return { text, setText, formattedText, directories };
+	const debouncedValue = useDebounce(text, { wait: 300 });
+	const { formattedText } = formatTextAsDirectoryTree(debouncedValue);
+
+	return { text, setText, formattedText };
 };
