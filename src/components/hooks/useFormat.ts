@@ -19,7 +19,7 @@ export const useFormat = () => {
   const [text, setText] = useState<string>(defaultValue);
   
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const {formattedDirData,formattedText} = formatTextAsDirectoryTree(debouncedValue);
+	const {directories,formattedText} = formatTextAsDirectoryTree(debouncedValue);
 
-	return { text, setText, formattedText,formattedDirData };
+	return { text, setText, formattedText, directories };
 };

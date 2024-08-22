@@ -1,18 +1,24 @@
+import { useEffect } from "react";
 import type { Directory } from "../types/directory";
 import { CodeMirrorEditor } from "./CodeMirrorEditor";
 import { CopyButton } from "./CopyButton";
+import { useDirectories } from "./hooks/useDirectories";
 import { useFormat } from "./hooks/useFormat";
 
 export const FormattedTextDisplayArea = () => {
-	const { text, setText, formattedText, formattedDirData } = useFormat();
+	const { text, setText, formattedText } = useFormat();
+	const {directories, setDirectories, generateDirectories, getFullPath } = useDirectories()
 
-	
+	useEffect(() => {
+		generateDirectories(text)
+	},[text])
+
 	const createDirectoryElement = (dirData: Directory, dirIndex: number) => {
 		
 		const resultPrefixes = []
 		for (let i = 1; i < dirData.depth; i++) {
-			const previousLinesSameDepth = formattedDirData
-			.slice(0, formattedDirData.indexOf(dirData))
+			const previousLinesSameDepth = directories
+			.slice(0, directories.indexOf(dirData))
 			.reverse()
 			.find((l) => l.depth === i);
 		if (previousLinesSameDepth && !previousLinesSameDepth.isLast) {
@@ -25,34 +31,15 @@ export const FormattedTextDisplayArea = () => {
 		return (
 			<>
 				{resultPrefixes.map((item,index) => <div key={`${dirData.dirName}-${index}`}>{item}</div>)}
-				<div className="cursor-pointer hover:bg-slate-200 rounded" onClick={() => handleDirectoryClick(dirData,dirIndex)}>{dirData.dirName}</div>
+				<div className="cursor-pointer hover:bg-slate-200 rounded" onClick={() => handleDirectoryClick(dirIndex)}>{dirData.dirName}</div>
 			</>
 		)
 	}
 
-	const getFullPath = (clickedItem: Directory, clickedIndex: number): string => {
-		const path: string[] = [clickedItem.dirName];
-		let currentDepth = clickedItem.depth;
-		
-		// 現在の項目から上位のディレクトリを遡る
-		for (let i = clickedIndex - 1; i >= 0; i--) {
-			const item = formattedDirData[i];
-			if (item && item.depth < currentDepth) {
-				path.unshift(item.dirName);
-				currentDepth = item.depth;
-				
-				// ルートに到達したら終了
-				if (currentDepth === 0) break;
-			}
-		}
-
-		// パスの配列を文字列に結合
-		return path.join('/').replace('//', '/'); // 重複するスラッシュを除去
-	}
 	
-	const handleDirectoryClick = (dirData: Directory, dirIndex: number) => {
+	const handleDirectoryClick = (dirIndex: number) => {
 		if (navigator.clipboard) {
-			navigator.clipboard.writeText(getFullPath(dirData,dirIndex))
+			navigator.clipboard.writeText(getFullPath(dirIndex))
 		}
 	}
 	return (
@@ -65,7 +52,7 @@ export const FormattedTextDisplayArea = () => {
 			<div
 				className="h-80 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto md:col-start-2 md:col-span-1 md:row-start-2 md:h-[32rem]"
 			>
-				{formattedDirData.map((dirData, index) => (
+				{directories.map((dirData, index) => (
 					<div className="flex" key={index}>
 						{createDirectoryElement(dirData, index)}
 					</div>

@@ -48,13 +48,13 @@ export const generatePrefix = (
 };
 
 type formatTextAsDirectoryTree = {
-	formattedDirData: Directory[],
+	directories: Directory[],
 	formattedText: string
 }
 
 export const formatTextAsDirectoryTree = (text: string): formatTextAsDirectoryTree => {
 
-	const formattedDirData =	separateLines(text)
+	const directories =	separateLines(text)
 		.map((line) => ({ dirName: line.trim(), depth: calculateDepth(line) }))
 		.map((line, index, array):Directory => ({
 			...line,
@@ -72,5 +72,5 @@ export const formatTextAsDirectoryTree = (text: string): formatTextAsDirectoryTr
 		)
 		.join("\n");
 	
-	return {formattedDirData, formattedText}
+	 return {directories, formattedText}
 };
