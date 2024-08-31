@@ -1,31 +1,8 @@
 import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
 import { calculateDepth } from "./calculateDepth/calculateDepth";
+import { generatePrefix } from "./generatePrefix/generatePrefix";
 import { isLastLine } from "./isLastLine/isLastLine";
 import { separateLines } from "./separateLines/separateLines";
-
-export const generatePrefix = (
-	line: { dirName: string; depth: number; isLast: boolean },
-	allLines: { dirName: string; depth: number; isLast: boolean }[],
-): string => {
-	let prefix = "";
-
-	for (let i = 1; i < line.depth; i++) {
-		const previousLinesSameDepth = allLines
-			.slice(0, allLines.indexOf(line))
-			.reverse()
-			.find((l) => l.depth === i);
-
-		if (previousLinesSameDepth && !previousLinesSameDepth.isLast) {
-			prefix += "│  ";
-		} else {
-			prefix += "   ";
-		}
-	}
-
-	prefix += line.isLast ? "└─ " : "├─ ";
-
-	return prefix;
-};
 
 export const formatTextAsDirectoryTree = (text: string) => {
 	const formattedLines: FormattedLine[] = separateLines(text)
