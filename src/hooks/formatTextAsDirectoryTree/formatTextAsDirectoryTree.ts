@@ -1,8 +1,5 @@
 import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
-
-export const separateLines = (text: string): string[] => {
-	return text.split("\n").filter((line) => line.trim() !== "");
-};
+import { separateLines } from "./separateLines/separateLines";
 
 export const calculateDepth = (line: string): number => {
 	return line.match(/^\s+/)?.[0].length || 0;
