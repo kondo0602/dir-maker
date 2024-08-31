@@ -17,8 +17,9 @@ const defaultValue = `/
 
 export const useFormat = () => {
 	const [text, setText] = useState<string>(defaultValue);
+
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const formattedText = formatTextAsDirectoryTree(debouncedValue);
+	const { formattedText } = formatTextAsDirectoryTree(debouncedValue);
 
 	return { text, setText, formattedText };
 };

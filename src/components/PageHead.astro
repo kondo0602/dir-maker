@@ -1,5 +1,7 @@
 ---
-const canonicalURL = new URL(Astro.url.pathname, '本番環境のWebサイトURL');
+const canonicalURL = new URL(Astro.url.pathname, 'http://localhost');
+// const canonicalURL = new URL(Astro.url.pathname, '本番環境のWebサイトURL');
+
 const ogpImageURL = new URL('/ogp.png', canonicalURL);
 ---
 

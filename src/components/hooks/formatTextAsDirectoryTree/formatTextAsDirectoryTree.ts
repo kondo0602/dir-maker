@@ -45,8 +45,14 @@ export const generatePrefix = (
 	return prefix;
 };
 
-export const formatTextAsDirectoryTree = (text: string): string => {
-	return separateLines(text)
+type formatTextAsDirectoryTree = {
+	formattedText: string;
+};
+
+export const formatTextAsDirectoryTree = (
+	text: string,
+): formatTextAsDirectoryTree => {
+	const formattedText = separateLines(text)
 		.map((line) => ({ dirName: line, depth: calculateDepth(line) }))
 		.map((line, index, array) => ({
 			...line,
@@ -56,4 +62,6 @@ export const formatTextAsDirectoryTree = (text: string): string => {
 			line.dirName.replace(/^\s+/, generatePrefix(line, array)),
 		)
 		.join("\n");
+
+	return { formattedText };
 };
