@@ -1,21 +1,23 @@
 import { clsx } from "clsx";
-import type { ComponentProps, FC } from "react";
+import { type ComponentProps, type FC, useCallback } from "react";
+import styles from "./CopyButton.module.css";
 
 type CopyButtonProps = ComponentProps<"button"> & {
 	text: string;
 };
 
 export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
-	const handleCopy = () => {
+	const handleCopy = useCallback(() => {
 		navigator.clipboard.writeText(text);
-	};
+	}, [text]);
 
 	return (
 		<button
 			type="button"
 			className={clsx(
 				className,
-				" text-gray-700 border border-gray-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center",
+				styles.button,
+				// " text-gray-700 border border-gray-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center",
 			)}
 			onClick={handleCopy}
 		>

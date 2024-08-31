@@ -1,9 +1,26 @@
-<header class="wrapper w-screen bg-white py-4 px-6 z-10">
-  <div class="flex justify-end">
-    <a
-      href="https://github.com/kondo0602/dir-maker"
-      class="text-sm font-semibold leading-6 text-gray-900"
-    >
+<style>
+  .header {
+    width: 100%;
+    padding-block: var(--spacing-md);
+    padding-inline: var(--spacing-lg);
+    background-color: var(--color-white);
+    z-index: var(--z-index-header);
+  }
+
+  .iconContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .icon {
+    color: var(--text-color-gray-900);
+    font-size: var(--text-size-md);
+  }
+</style>
+
+<header class="header">
+  <div class="iconContainer">
+    <a href="https://github.com/kondo0602/dir-maker" class="icon">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"

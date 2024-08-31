@@ -1,0 +1,17 @@
+/* className="flex hover:bg-slate-200 rounded" */
+.button {
+  display: flex;
+  border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-duration-short);
+}
+
+.button:focus-visible {
+  background-color: var(--background-hover);
+  outline: none;
+}
+
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: var(--background-hover);
+  }
+}
