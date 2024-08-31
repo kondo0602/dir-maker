@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { clsx } from "clsx";
 import type { ComponentProps, FC } from "react";
 
 type CopyButtonProps = ComponentProps<"button"> & {
