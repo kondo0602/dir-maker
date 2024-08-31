@@ -1,21 +1,7 @@
 import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
 import { calculateDepth } from "./calculateDepth/calculateDepth";
+import { isLastLine } from "./isLastLine/isLastLine";
 import { separateLines } from "./separateLines/separateLines";
-
-export const isLast = (
-	line: { dirName: string; depth: number },
-	nextLine: { dirName: string; depth: number } | undefined,
-	linesAfterCurrent: { dirName: string; depth: number }[],
-): boolean => {
-	return (
-		!nextLine ||
-		nextLine.depth < line.depth ||
-		linesAfterCurrent.every((l) => l.depth > line.depth) ||
-		(linesAfterCurrent[
-			linesAfterCurrent.findIndex((l) => l.depth <= line.depth)
-		]?.depth ?? 0) < line.depth
-	);
-};
 
 export const generatePrefix = (
 	line: { dirName: string; depth: number; isLast: boolean },
@@ -46,7 +32,7 @@ export const formatTextAsDirectoryTree = (text: string) => {
 		.map((line) => ({ dirName: line, depth: calculateDepth(line) }))
 		.map((line, index, array) => ({
 			...line,
-			isLast: isLast(line, array[index + 1], array.slice(index + 1)),
+			isLast: isLastLine(line, array[index + 1], array.slice(index + 1)),
 		}))
 		.map((line, index, array) => {
 			return {
