@@ -1,9 +1,9 @@
 import { useEffect } from "react";
+import { useDirectories } from "../hooks/useDirectories";
+import { useFormat } from "../hooks/useFormat";
 import { ClickableLine } from "./ClickableLine";
 import { CodeMirrorEditor } from "./CodeMirrorEditor";
 import { CopyButton } from "./CopyButton";
-import { useDirectories } from "./hooks/useDirectories";
-import { useFormat } from "./hooks/useFormat";
 
 export const FormattedTextDisplayArea = () => {
 	const { text, setText, formattedText } = useFormat();

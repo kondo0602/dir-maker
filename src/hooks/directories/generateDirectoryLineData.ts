@@ -1,4 +1,4 @@
-import type { Directory } from "../../../types/directory";
+import type { Directory } from "../../types/directory";
 
 export const generateDirectoryLineData = <T extends Directory[]>(
 	directories: T,

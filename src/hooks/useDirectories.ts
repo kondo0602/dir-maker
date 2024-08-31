@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import type { Directory } from "../../types/directory";
+import type { Directory } from "../types/directory";
 import { parseTextToDirectories } from "./directories/parseTextToDirectories";
 
 export const useDirectories = () => {

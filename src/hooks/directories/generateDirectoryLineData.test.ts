@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Directory } from "../../../types/directory";
+import type { Directory } from "../../types/directory";
 import { generateDirectoryLineData } from "./generateDirectoryLineData";
 
 describe("generateDirectoryLineData", () => {

@@ -1,6 +1,6 @@
 import type { FC } from "react";
+import { generateDirectoryLineData } from "../hooks/directories/generateDirectoryLineData";
 import type { Directory } from "../types/directory";
-import { generateDirectoryLineData } from "./hooks/directories/generateDirectoryLineData";
 
 type ClickableLineProps = {
 	dirIndex: number;

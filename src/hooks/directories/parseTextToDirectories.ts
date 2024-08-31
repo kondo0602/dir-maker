@@ -1,4 +1,4 @@
-import type { Directory } from "../../../types/directory";
+import type { Directory } from "../../types/directory";
 import {
 	calculateDepth,
 	isLast,
