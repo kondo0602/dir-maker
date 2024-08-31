@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { resolveFullDirectoryPath } from "./resolveFullDirectoryPath";
+import { resolveFullPath } from "./resolveFullPath";
 
-describe("resolveFullDirectoryPath", () => {
+describe("resolveFullPath", () => {
 	const directories: { dirName: string; depth: number }[] = [
 		{ dirName: "/", depth: 0 },
 		{ dirName: "src", depth: 1 },
@@ -17,37 +17,37 @@ describe("resolveFullDirectoryPath", () => {
 	];
 
 	it("ルートパスを正しく解決すること", () => {
-		const result = resolveFullDirectoryPath(0, directories);
+		const result = resolveFullPath(0, directories);
 		expect(result).toBe("/");
 	});
 
 	it("srcパスを正しく解決すること", () => {
-		const result = resolveFullDirectoryPath(1, directories);
+		const result = resolveFullPath(1, directories);
 		expect(result).toBe("/src");
 	});
 
 	it("ネストされたコンポーネントのパスを正しく解決すること", () => {
-		const result = resolveFullDirectoryPath(3, directories);
+		const result = resolveFullPath(3, directories);
 		expect(result).toBe("/src/components/Textarea.tsx");
 	});
 
 	it("兄弟ディレクトリのパスを正しく解決すること", () => {
-		const result = resolveFullDirectoryPath(4, directories);
+		const result = resolveFullPath(4, directories);
 		expect(result).toBe("/src/pages");
 	});
 
 	it("ルートディレクトリ直下のファイルのパスを正しく解決すること", () => {
-		const result = resolveFullDirectoryPath(7, directories);
+		const result = resolveFullPath(7, directories);
 		expect(result).toBe("/astro.config.mjs");
 	});
 
 	it("無効なインデックスに対して空文字列を返えすこと", () => {
-		const result = resolveFullDirectoryPath(20, directories);
+		const result = resolveFullPath(20, directories);
 		expect(result).toBe("");
 	});
 
 	it("空のディレクトリ配列を処理すること", () => {
-		const result = resolveFullDirectoryPath(0, []);
+		const result = resolveFullPath(0, []);
 		expect(result).toBe("");
 	});
 });

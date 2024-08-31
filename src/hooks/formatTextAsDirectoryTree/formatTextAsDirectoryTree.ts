@@ -1,7 +1,7 @@
-import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
 import { calculateDepth } from "./calculateDepth/calculateDepth";
 import { generatePrefix } from "./generatePrefix/generatePrefix";
 import { isLastLine } from "./isLastLine/isLastLine";
+import { resolveFullPath } from "./resolveFullPath/resolveFullPath";
 import { separateLines } from "./separateLines/separateLines";
 
 export const formatTextAsDirectoryTree = (text: string) => {
@@ -14,7 +14,7 @@ export const formatTextAsDirectoryTree = (text: string) => {
 		.map((line, index, array) => {
 			return {
 				displayText: line.dirName.replace(/^\s+/, generatePrefix(line, array)),
-				fullPath: resolveFullDirectoryPath(index, array),
+				fullPath: resolveFullPath(index, array),
 			};
 		});
 

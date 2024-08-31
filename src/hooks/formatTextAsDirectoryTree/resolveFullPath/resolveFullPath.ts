@@ -1,4 +1,11 @@
-export const resolveFullDirectoryPath = (
+/**
+ * ディレクトリツリーのフルパスを生成する
+ *
+ * @param targetIndex - 処理対象の行のインデックス
+ * @param directories - 全ての行
+ * @returns 処理対象の行のフルパス
+ */
+export const resolveFullPath = (
 	targetIndex: number,
 	directories: { dirName: string; depth: number }[],
 ): string => {
