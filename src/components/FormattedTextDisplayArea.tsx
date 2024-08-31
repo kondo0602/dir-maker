@@ -13,7 +13,7 @@ export const FormattedTextDisplayArea = () => {
 				className="justify-self-end hidden md:block md:col-start-2 md:col-span-1 md:row-start-1"
 				text={formattedLines.map((line) => line.displayText).join("\n")}
 			/>
-			<div className="h-80 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto md:col-start-2 md:col-span-1 md:row-start-2 md:h-[32rem]">
+			<div className="flex flex-col h-80 p-2.5 font-mono text-base text-gray-900 border border-gray-300 rounded-lg whitespace-pre overflow-auto md:col-start-2 md:col-span-1 md:row-start-2 md:h-[32rem]">
 				{formattedLines.map((formattedLine, index) => (
 					<ClickableLine
 						// biome-ignore lint:行の入れ替えが発生し得ないため、keyにindexを設定している

@@ -10,14 +10,12 @@ export const ClickableLine: FC<ClickableLineProps> = ({ formattedLine }) => {
 	};
 
 	return (
-		<div className="flex">
-			<button
-				className="cursor-pointer hover:bg-slate-200 rounded"
-				onClick={handleCopyFullPath}
-				type="button"
-			>
-				{formattedLine.displayText}
-			</button>
-		</div>
+		<button
+			className="flex hover:bg-slate-200 rounded"
+			type="button"
+			onClick={handleCopyFullPath}
+		>
+			{formattedLine.displayText}
+		</button>
 	);
 };
