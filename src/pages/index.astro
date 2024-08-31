@@ -1,31 +1,53 @@
 ---
-import { FormattedTextDisplayArea } from '../components/FormattedTextDisplayArea';
+import { FormattedTextDisplayArea } from '../components/FormattedTextDisplayArea/FormattedTextDisplayAres';
 import Header from '../components/Header.astro';
 import PageHead from '../components/PageHead.astro';
+import '../styles/global.css';
 ---
+
+<style>
+  .body {
+    display: grid;
+    grid-template-rows: 64px 1fr;
+    width: 100dvw;
+    height: 100dvh;
+  }
+
+  .main {
+    width: min(100%, 1280px);
+    margin-inline: auto;
+  }
+
+  .heading {
+    color: var(--text-color-gray-900);
+    font-size: var(--text-size-xl);
+    font-weight: var(--font-weight-extra-bold);
+    text-align: center;
+  }
+
+  .description {
+    padding-inline: var(--spacing-lg);
+    margin-block-end: var(--spacing-lg);
+    color: var(--text-color-gray-500);
+    font-size: var(--text-size-md);
+    text-align: center;
+  }
+</style>
 
 <html lang="en">
   <PageHead />
-  <body class="grid grid-rows-[64px_1fr] w-screen h-screen">
+  <body class="body">
     <Header />
-    <main class="container pb-4 mx-auto">
-      <h1
-        class="text-center mb-2 text-6xl font-extrabold leading-none tracking-tight text-gray-900"
-      >
-        Dir Maker
-      </h1>
-      <p
-        class="mb-6 md:text-lg font-normal text-gray-500 lg:text-xl px-8 md:px-48"
-      >
+    <main class="main">
+      <h1 class="heading">Dir Maker</h1>
+      <p class="description">
         Please input the plain text of your directory structure into the
         provided textarea.
         <br />
         Adding a space at the beginning of the text will convert it into a formatted
         directory structure!
       </p>
-      <div class="flex flex-col w-full gap-8">
-        <FormattedTextDisplayArea client:only="react" />
-      </div>
+      <FormattedTextDisplayArea client:only="react" />
     </main>
   </body>
 </html>

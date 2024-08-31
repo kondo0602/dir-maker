@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import styles from "./ClickableLine.module.css";
 
 type ClickableLineProps = {
 	formattedLine: FormattedLine;
@@ -11,7 +12,7 @@ export const ClickableLine: FC<ClickableLineProps> = ({ formattedLine }) => {
 
 	return (
 		<button
-			className="flex hover:bg-slate-200 rounded"
+			className={styles.button}
 			type="button"
 			onClick={handleCopyFullPath}
 		>

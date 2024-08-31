@@ -1,6 +1,7 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "codemirror";
 import type { FC } from "react";
+import styles from "./CodeMirrorEditor.module.css";
 
 const customStyle = EditorView.baseTheme({
 	"&.cm-focused": {
@@ -24,7 +25,8 @@ export const CodeMirrorEditor: FC<CodeMirrorEditorProps> = ({
 }) => {
 	return (
 		<CodeMirror
-			className="p-2.5 md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-80 text-base text-gray-900 border border-gray-300 rounded-lg overflow-auto md:h-[32rem]"
+			// className="p-2.5 md:col-start-1 md:col-span-1 md:row-start-2 md:row-span-2 h-80 text-base text-gray-900 border border-gray-300 rounded-lg overflow-auto md:h-[32rem]"
+			className={styles.textarea}
 			height="100%"
 			value={value}
 			onChange={onChangeValue}
