@@ -1,9 +1,6 @@
 import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
+import { calculateDepth } from "./calculateDepth/calculateDepth";
 import { separateLines } from "./separateLines/separateLines";
-
-export const calculateDepth = (line: string): number => {
-	return line.match(/^\s+/)?.[0].length || 0;
-};
 
 export const isLast = (
 	line: { dirName: string; depth: number },
