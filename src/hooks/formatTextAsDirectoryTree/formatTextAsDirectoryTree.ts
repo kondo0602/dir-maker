@@ -1,3 +1,5 @@
+import { resolveFullDirectoryPath } from "../directories/resolveFullDirectoryPath";
+
 export const separateLines = (text: string): string[] => {
 	return text.split("\n").filter((line) => line.trim() !== "");
 };
@@ -45,23 +47,19 @@ export const generatePrefix = (
 	return prefix;
 };
 
-type formatTextAsDirectoryTree = {
-	formattedText: string;
-};
-
-export const formatTextAsDirectoryTree = (
-	text: string,
-): formatTextAsDirectoryTree => {
-	const formattedText = separateLines(text)
+export const formatTextAsDirectoryTree = (text: string) => {
+	const formattedLines: FormattedLine[] = separateLines(text)
 		.map((line) => ({ dirName: line, depth: calculateDepth(line) }))
 		.map((line, index, array) => ({
 			...line,
 			isLast: isLast(line, array[index + 1], array.slice(index + 1)),
 		}))
-		.map((line, _, array) =>
-			line.dirName.replace(/^\s+/, generatePrefix(line, array)),
-		)
-		.join("\n");
+		.map((line, index, array) => {
+			return {
+				displayText: line.dirName.replace(/^\s+/, generatePrefix(line, array)),
+				fullPath: resolveFullDirectoryPath(index, array),
+			};
+		});
 
-	return { formattedText };
+	return formattedLines;
 };

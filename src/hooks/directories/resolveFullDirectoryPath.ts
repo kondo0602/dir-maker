@@ -1,14 +1,12 @@
-import type { Directory } from "../../types/directory";
-
 export const resolveFullDirectoryPath = (
-	directories: Directory[],
-	index: number,
+	targetIndex: number,
+	directories: { dirName: string; depth: number }[],
 ): string => {
-	const clickedItem = directories[index];
+	const clickedItem = directories[targetIndex];
 	if (!clickedItem) return "";
 	const path: string[] = [clickedItem.dirName];
 	let currentDepth = clickedItem.depth;
-	for (let i = index - 1; i >= 0; i--) {
+	for (let i = targetIndex - 1; i >= 0; i--) {
 		const item = directories[i];
 		if (item && item.depth < currentDepth) {
 			path.unshift(item.dirName);
@@ -16,5 +14,9 @@ export const resolveFullDirectoryPath = (
 			if (currentDepth === 0) break;
 		}
 	}
-	return path.join("/").replace("//", "/");
+
+	return path
+		.join("/")
+		.replace("//", "/")
+		.replace(/\s*\/\s*/g, "/");
 };
