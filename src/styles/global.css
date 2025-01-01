@@ -24,6 +24,7 @@
   --border-radius-lg: 12px;
 
   --z-index-header: 10;
+  --z-index-tooltip: 11;
 
   --transition-duration-short: 0.25s;
   --transition-duration-long: 0.5s;

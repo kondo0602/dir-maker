@@ -1,25 +1,36 @@
 import { clsx } from "clsx";
 import { type ComponentProps, type FC, useCallback } from "react";
+import type { ClickEvent, ShowTooltip } from "../../types/tooltip";
 import styles from "./CopyButton.module.css";
 
 type CopyButtonProps = ComponentProps<"button"> & {
 	text: string;
+	showTooltip: ShowTooltip;
 };
 
-export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
-	const handleCopy = useCallback(() => {
-		navigator.clipboard.writeText(text);
-	}, [text]);
+export const CopyButton: FC<CopyButtonProps> = ({
+	className,
+	text,
+	showTooltip,
+}) => {
+	const handleCopy = useCallback(
+		(clickEvent: ClickEvent) => {
+			navigator.clipboard.writeText(text);
+			showTooltip(clickEvent);
+		},
+		[text, showTooltip],
+	);
 
 	return (
 		<button
+			id="copy-button" // ツールチップ表示位置をボタンの中央上部に固定するためのID
 			type="button"
 			className={clsx(
 				className,
 				styles.button,
 				// " text-gray-700 border border-gray-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center",
 			)}
-			onClick={handleCopy}
+			onClick={(event) => handleCopy(event)}
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

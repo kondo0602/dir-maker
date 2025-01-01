@@ -1,0 +1,58 @@
+.tooltip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.6rem;
+  top: 0;
+  left: 0;
+  scale: 0.9;
+  opacity: 0;
+  transform-origin: bottom;
+  background-color: #4b5563;
+  color: var(--color-white);
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color-gray);
+  border-radius: var(--border-radius-sm);
+  user-select: none;
+  pointer-events: none;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1;
+  background-color: var(--border-color-gray);
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  bottom: 0;
+  left: 50%;
+  translate: -50% 100%;
+  z-index: -2;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  aspect-ratio: 1;
+  background-color: #4b5563;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  bottom: 0;
+  left: 50%;
+  translate: -50% calc(100% - 1px);
+  z-index: -1;
+}
+
+.tooltip._show {
+  opacity: 1;
+  scale: 1;
+  transition: opacity var(--transition-duration-short) ease-in-out, scale var(--transition-duration-short) ease-in-out; /* ぱっと表示 */
+}
+
+.tooltip._hidden {
+  scale: 0.9;
+  opacity: 0;
+  transition: opacity 1000ms ease-out, scale 1000ms ease-out; /* ゆっくりフェードアウト */
+}
