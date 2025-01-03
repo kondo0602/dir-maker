@@ -21,6 +21,7 @@ export const useTooltip = () => {
 
 		// ツールチップを表示してからフェードアウト
 		setIsVisible(true);
+
 		timerRef.current = setTimeout(() => {
 			setIsVisible(false);
 			timerRef.current = null;
