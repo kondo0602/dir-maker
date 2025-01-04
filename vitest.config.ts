@@ -1,7 +1,8 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vitest/config";
+import { getViteConfig } from "astro/config";
 
-export default defineConfig({
+// https://docs.astro.build/en/guides/testing/#vitest
+export default getViteConfig({
 	test: {
 		environment: "happy-dom",
 		globals: true,
