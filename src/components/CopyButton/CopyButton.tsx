@@ -14,11 +14,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
 	return (
 		<button
 			type="button"
-			className={clsx(
-				className,
-				styles.button,
-				// " text-gray-700 border border-gray-700 hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm p-2.5 text-center items-center",
-			)}
+			className={clsx(className, styles.button)}
 			onClick={handleCopy}
 		>
 			<svg
