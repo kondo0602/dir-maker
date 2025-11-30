@@ -1,6 +1,6 @@
 import { useDebounce } from "ahooks";
 import { useState } from "react";
-import { formatTextAsDirectoryTree } from "./formatTextAsDirectoryTree/formatTextAsDirectoryTree";
+import { formatTextAsDirectoryTree } from "./format-text-as-directory-tree/format-text-as-directory-tree";
 
 const defaultValue = `/
  src

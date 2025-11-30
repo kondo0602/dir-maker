@@ -1,0 +1,81 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color-gray);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-index-header);
+  transition: background-color var(--transition-duration-short), border-color var(--transition-duration-short);
+}
+
+@media (width < 768px) {
+  .header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  background-color: var(--color-accent-light);
+  border: 1px solid var(--color-accent-border);
+  border-radius: var(--border-radius-md);
+}
+
+.logo {
+  color: var(--color-accent);
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color-gray-900);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-color-gray-500);
+  line-height: 1.2;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+  color: var(--text-color-gray-500);
+  border-radius: var(--border-radius-md);
+  transition: color var(--transition-duration-short), background-color var(--transition-duration-short);
+}
+
+.iconButton:hover {
+  color: var(--text-color-gray-900);
+  background-color: var(--background-hover);
+}

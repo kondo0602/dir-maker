@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { resolveFullPath } from "./resolveFullPath";
+import { resolveFullPath } from "./resolve-full-path";
 
 describe("resolveFullPath", () => {
 	const directories: { dirName: string; depth: number }[] = [

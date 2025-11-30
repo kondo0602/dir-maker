@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { isLastLine } from "./isLastLine";
+import { isLastLine } from "./is-last-line";
 
 describe("isLastLine", () => {
 	it("次の行が存在しない場合はtrueを返すこと", () => {

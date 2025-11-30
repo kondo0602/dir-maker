@@ -1,25 +1,47 @@
 .wrapper {
-  container: wrapper / inline-size;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: 100%;
   padding-inline: var(--spacing-xl);
   column-gap: var(--spacing-xl);
-  row-gap: var(--spacing-sm);
 }
 
 @media (width < 768px) {
   .wrapper {
     display: flex;
     flex-direction: column;
-    row-gap: var(--spacing-md);
+    row-gap: var(--spacing-lg);
   }
 }
 
+.inputSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.previewSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sectionLabel {
+  padding-block: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color-gray-500);
+  letter-spacing: 0.05em;
+}
+
 .button {
-  grid-column-start: 2;
-  grid-row-start: 1;
-  justify-self: flex-end;
+  flex-shrink: 0;
 }
 
 @media (width < 768px) {
@@ -29,13 +51,12 @@
 }
 
 .formattedTextarea {
-  grid-column-start: 2;
-  grid-row-start: 2;
   display: flex;
   flex-direction: column;
   height: 512px;
   padding: var(--spacing-sm);
   color: var(--text-color-gray-900);
+  background-color: var(--color-white);
   border: 1px solid var(--border-color-gray);
   border-radius: var(--border-radius-md);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -43,8 +64,8 @@
   overflow: auto;
 }
 
-  @media (width < 768px) {
-  .formatted-textarea {
+@media (width < 768px) {
+  .formattedTextarea {
     height: 320px;
   }
 }

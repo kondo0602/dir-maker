@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { generatePrefix } from "./generatePrefix";
+import { generatePrefix } from "./generate-prefix";
 
 describe("generatePrefix", () => {
 	it("各行に正しいプレフィックスが生成されること", () => {

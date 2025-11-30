@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { calculateDepth } from "./calculateDepth";
+import { calculateDepth } from "./calculate-depth";
 
 describe("calculateDepth", () => {
 	it("行の先頭に空白がない場合、深さが0であること", () => {

@@ -1,9 +1,9 @@
-import type { FormattedLine } from "../../types/formattedLine";
-import { calculateDepth } from "./calculateDepth/calculateDepth";
-import { generatePrefix } from "./generatePrefix/generatePrefix";
-import { isLastLine } from "./isLastLine/isLastLine";
-import { resolveFullPath } from "./resolveFullPath/resolveFullPath";
-import { separateLines } from "./separateLines/separateLines";
+import type { FormattedLine } from "../../../../types/formattedLine";
+import { calculateDepth } from "./calculate-depth/calculate-depth";
+import { generatePrefix } from "./generate-prefix/generate-prefix";
+import { isLastLine } from "./is-last-line/is-last-line";
+import { resolveFullPath } from "./resolve-full-path/resolve-full-path";
+import { separateLines } from "./separate-lines/separate-lines";
 
 export const formatTextAsDirectoryTree = (text: string) => {
 	const formattedLines: FormattedLine[] = separateLines(text)

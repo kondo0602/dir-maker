@@ -1,10 +1,13 @@
 .button {
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   padding-inline: 12px;
-  padding-block: 8px;
+  padding-block: 4px;
+  font-size: 14px;
   color: var(--text-color-gray-700);
   background-color: var(--color-white);
-  border: 1px solid currentColor;
+  border: 1px solid var(--border-color-gray);
   border-radius: var(--border-radius-sm);
   transition: background-color var(--transition-duration-short);
 }

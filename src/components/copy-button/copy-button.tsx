@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { Check, Copy } from "lucide-react";
 import { type ComponentProps, type FC, useCallback, useState } from "react";
 import styles from "./copy-button.module.css";
 
@@ -23,9 +24,15 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
 			onClick={handleCopy}
 		>
 			{isCopied ? (
-				<span className={clsx(styles.text)}>Copied!</span>
+				<>
+					<Check size={14} />
+					<span>Copied!</span>
+				</>
 			) : (
-				<span className={clsx(styles.text)}>Copy</span>
+				<>
+					<Copy size={14} />
+					<span>Copy</span>
+				</>
 			)}
 		</button>
 	);

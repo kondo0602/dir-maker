@@ -4,7 +4,8 @@
   grid-row-start: 2;
   height: 32rem;
   padding: var(--spacing-sm);
-  color: var(text-color-gray-900);
+  color: var(--text-color-gray-900);
+  background-color: var(--color-white);
   border: 1px solid var(--border-color-gray);
   border-radius: 0.5rem;
   overflow-y: auto;

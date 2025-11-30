@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { separateLines } from "./separateLines";
+import { separateLines } from "./separate-lines";
 
 describe("separateLines", () => {
 	it("空文字を処理できること", () => {

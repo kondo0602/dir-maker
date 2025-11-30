@@ -5,6 +5,11 @@
   --spacing-xl: 32px;
 
   --color-white: #fff;
+  --color-slate-50: #f8fafc;
+
+  --color-accent: #4f46e5;
+  --color-accent-light: rgba(99, 102, 241, 0.1);
+  --color-accent-border: rgba(99, 102, 241, 0.2);
 
   --text-color-gray-500: #6b7280;
   --text-color-gray-700: #4b5563;
@@ -38,7 +43,7 @@
 }
 
 body {
-  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
