@@ -35,7 +35,7 @@
 }
 
 .sectionLabel {
-  padding-block: 4px;
+  padding-block: var(--spacing-xs);
   font-size: 12px;
   font-weight: 600;
   color: var(--text-color-tertiary);

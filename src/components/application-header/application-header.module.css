@@ -53,6 +53,7 @@
 }
 
 .subtitle {
+  margin-top: var(--spacing-xs);
   font-size: 12px;
   font-weight: 500;
   color: var(--text-color-tertiary);
