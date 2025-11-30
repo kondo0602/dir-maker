@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { type ComponentProps, type FC, useCallback, useState } from "react";
-import styles from "./CopyButton.module.css";
+import styles from "./copy-button.module.css";
 
 type CopyButtonProps = ComponentProps<"button"> & {
 	text: string;

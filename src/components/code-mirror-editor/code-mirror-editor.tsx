@@ -1,7 +1,7 @@
 import CodeMirror from "@uiw/react-codemirror";
 import { EditorView } from "codemirror";
 import type { FC } from "react";
-import styles from "./CodeMirrorEditor.module.css";
+import styles from "./code-mirror-editor.module.css";
 
 const customStyle = EditorView.baseTheme({
 	"&.cm-focused": {
