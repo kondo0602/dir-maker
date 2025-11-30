@@ -3,16 +3,22 @@ import { useState } from "react";
 import { formatTextAsDirectoryTree } from "./format-text-as-directory-tree/format-text-as-directory-tree";
 
 const defaultValue = `/
+ public
+  vite.svg
  src
-  components
-   Textarea.tsx
-  pages
-   index.astro
+  assets
+   react.svg
+  App.css
+  App.tsx
+  index.css
+  main.tsx
+  vite-env.d.ts
  .gitignore
- astro.config.mjs
+ eslint.config.js
+ index.html
  package.json
- package.lock.json
  tsconfig.json
+ vite.config.ts
 `;
 
 export const useFormat = () => {
