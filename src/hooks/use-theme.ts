@@ -1,27 +1,21 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 type Theme = "light" | "dark";
 
+const getInitialTheme = (): Theme => {
+  if (typeof window === "undefined") return "light";
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
 export const useTheme = () => {
-  const [theme, setTheme] = useState<Theme>("light");
-
-  useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-
-    if (saved) {
-      setTheme(saved);
-      document.documentElement.dataset.theme = saved;
-      return;
-    }
-
-    document.documentElement.dataset.theme = "light";
-  }, []);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   const toggleTheme = useCallback(() => {
     const next: Theme = theme === "light" ? "dark" : "light";
     setTheme(next);
     document.documentElement.dataset.theme = next;
-    localStorage.setItem("theme", next);
   }, [theme]);
 
   return { theme, toggleTheme };

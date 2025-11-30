@@ -1,6 +1,12 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head prefix="og: https://ogp.me/ns#">
+    <script>
+      (function() {
+        var isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+      })();
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
