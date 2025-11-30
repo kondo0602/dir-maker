@@ -11,9 +11,9 @@
   --color-accent-light: rgba(99, 102, 241, 0.1);
   --color-accent-border: rgba(99, 102, 241, 0.2);
 
-  --text-color-gray-500: #6b7280;
-  --text-color-gray-700: #4b5563;
-  --text-color-gray-900: #111827;
+  --text-color-primary: #111827;
+  --text-color-secondary: #4b5563;
+  --text-color-tertiary: #6b7280;
 
   --text-size-md: 18px;
   --text-size-xl: 60px;
@@ -46,9 +46,9 @@
   --color-accent-light: rgba(129, 140, 248, 0.15);
   --color-accent-border: rgba(129, 140, 248, 0.3);
 
-  --text-color-gray-500: #94a3b8;
-  --text-color-gray-700: #cbd5e1;
-  --text-color-gray-900: #f1f5f9;
+  --text-color-primary: #f1f5f9;
+  --text-color-secondary: #cbd5e1;
+  --text-color-tertiary: #94a3b8;
 
   --background-hover: #334155;
 

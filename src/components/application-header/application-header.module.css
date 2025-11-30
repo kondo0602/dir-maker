@@ -42,12 +42,13 @@
 .titleContainer {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .title {
   font-size: 20px;
   font-weight: 700;
-  color: var(--text-color-gray-900);
+  color: var(--text-color-primary);
   line-height: 1.2;
   letter-spacing: -0.025em;
 }
@@ -55,7 +56,7 @@
 .subtitle {
   font-size: 12px;
   font-weight: 500;
-  color: var(--text-color-gray-500);
+  color: var(--text-color-tertiary);
   line-height: 1.2;
 }
 
@@ -70,12 +71,12 @@
   align-items: center;
   justify-content: center;
   padding: var(--spacing-sm);
-  color: var(--text-color-gray-500);
+  color: var(--text-color-tertiary);
   border-radius: var(--border-radius-md);
   transition: color var(--transition-duration-short), background-color var(--transition-duration-short);
 }
 
 .iconButton:hover {
-  color: var(--text-color-gray-900);
+  color: var(--text-color-primary);
   background-color: var(--background-hover);
 }

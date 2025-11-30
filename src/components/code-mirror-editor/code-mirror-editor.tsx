@@ -6,16 +6,16 @@ import styles from "./code-mirror-editor.module.css";
 const customStyle = EditorView.theme({
 	"&": {
 		backgroundColor: "var(--color-white)",
-		color: "var(--text-color-gray-900)",
+		color: "var(--text-color-primary)",
 	},
 	"&.cm-focused": {
 		outline: "none",
 	},
 	".cm-content": {
-		caretColor: "var(--text-color-gray-900)",
+		caretColor: "var(--text-color-primary)",
 	},
 	".cm-cursor": {
-		borderLeftColor: "var(--text-color-gray-900)",
+		borderLeftColor: "var(--text-color-primary)",
 	},
 	".cm-line": {
 		fontFamily:
