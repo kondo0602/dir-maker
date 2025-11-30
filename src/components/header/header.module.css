@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  padding-block: var(--spacing-md);
+  padding-inline: var(--spacing-lg);
+  background-color: var(--color-white);
+  z-index: var(--z-index-header);
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon {
+  color: var(--text-color-gray-900);
+  font-size: var(--text-size-md);
+}

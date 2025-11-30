@@ -1,3 +1,4 @@
+import type { FormattedLine } from "../../types/formattedLine";
 import { calculateDepth } from "./calculateDepth/calculateDepth";
 import { generatePrefix } from "./generatePrefix/generatePrefix";
 import { isLastLine } from "./isLastLine/isLastLine";

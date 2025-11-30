@@ -1,0 +1,26 @@
+.body {
+  display: grid;
+  grid-template-rows: 64px 1fr;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+.main {
+  width: min(100%, 1280px);
+  margin-inline: auto;
+}
+
+.heading {
+  color: var(--text-color-gray-900);
+  font-size: var(--text-size-xl);
+  font-weight: var(--font-weight-extra-bold);
+  text-align: center;
+}
+
+.description {
+  padding-inline: var(--spacing-lg);
+  margin-block-end: var(--spacing-lg);
+  color: var(--text-color-gray-500);
+  font-size: var(--text-size-md);
+  text-align: center;
+}

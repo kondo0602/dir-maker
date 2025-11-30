@@ -28,3 +28,22 @@
   --transition-duration-short: 0.25s;
   --transition-duration-long: 0.5s;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
