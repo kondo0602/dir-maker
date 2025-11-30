@@ -1,8 +1,8 @@
 .body {
   display: grid;
   grid-template-rows: auto 1fr;
-  width: 100dvw;
-  height: 100dvh;
+  width: 100%;
+  min-height: 100dvh;
   background-color: var(--color-slate-50);
 }
 
