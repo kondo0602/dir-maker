@@ -32,6 +32,30 @@
 
   --transition-duration-short: 0.25s;
   --transition-duration-long: 0.5s;
+
+  /* ヘッダー */
+  --header-background: rgba(255, 255, 255, 0.8);
+  --header-border: var(--border-color-gray);
+}
+
+:root[data-theme="dark"] {
+  --color-white: #0f172a;
+  --color-slate-50: #1e293b;
+
+  --color-accent: #818cf8;
+  --color-accent-light: rgba(129, 140, 248, 0.15);
+  --color-accent-border: rgba(129, 140, 248, 0.3);
+
+  --text-color-gray-500: #94a3b8;
+  --text-color-gray-700: #cbd5e1;
+  --text-color-gray-900: #f1f5f9;
+
+  --background-hover: #334155;
+
+  --border-color-gray: #475569;
+
+  --header-background: rgba(15, 23, 42, 0.8);
+  --header-border: #334155;
 }
 
 *,
@@ -51,4 +75,25 @@ body {
 button {
   all: unset;
   cursor: pointer;
+}
+
+/* CodeMirror dark mode overrides */
+:root[data-theme="dark"] .cm-editor {
+  background-color: #0f172a;
+}
+
+:root[data-theme="dark"] .cm-gutters {
+  background-color: #0f172a;
+}
+
+:root[data-theme="dark"] .cm-activeLineGutter {
+  background-color: transparent;
+}
+
+:root[data-theme="dark"] .cm-editor.cm-focused .cm-activeLine {
+  background-color: rgba(129, 140, 248, 0.15);
+}
+
+:root[data-theme="dark"] .cm-editor.cm-focused .cm-activeLineGutter {
+  background-color: rgba(129, 140, 248, 0.15);
 }

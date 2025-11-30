@@ -4,8 +4,18 @@ import type { FC } from "react";
 import styles from "./code-mirror-editor.module.css";
 
 const customStyle = EditorView.theme({
+	"&": {
+		backgroundColor: "var(--color-white)",
+		color: "var(--text-color-gray-900)",
+	},
 	"&.cm-focused": {
 		outline: "none",
+	},
+	".cm-content": {
+		caretColor: "var(--text-color-gray-900)",
+	},
+	".cm-cursor": {
+		borderLeftColor: "var(--text-color-gray-900)",
 	},
 	".cm-line": {
 		fontFamily:
@@ -23,6 +33,10 @@ const customStyle = EditorView.theme({
 	},
 	"&.cm-focused .cm-activeLineGutter": {
 		backgroundColor: "var(--color-accent-light)",
+	},
+	".cm-gutters": {
+		backgroundColor: "var(--color-white)",
+		borderRight: "none",
 	},
 });
 
