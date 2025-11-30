@@ -30,6 +30,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 32px;
 }
 
 .sectionLabel {
@@ -54,7 +55,7 @@
   display: flex;
   flex-direction: column;
   height: 512px;
-  padding: var(--spacing-sm);
+  padding: var(--spacing-md);
   color: var(--text-color-gray-900);
   background-color: var(--color-white);
   border: 1px solid var(--border-color-gray);

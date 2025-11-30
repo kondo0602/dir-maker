@@ -21,6 +21,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
 		<button
 			type="button"
 			className={clsx(className, styles.button)}
+			data-copied={isCopied}
 			onClick={handleCopy}
 		>
 			{isCopied ? (
@@ -31,7 +32,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
 			) : (
 				<>
 					<Copy size={14} />
-					<span>Copy</span>
+					<span>Copy Output</span>
 				</>
 			)}
 		</button>
