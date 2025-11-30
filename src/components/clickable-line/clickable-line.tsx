@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import styles from "./ClickableLine.module.css";
+import styles from "./clickable-line.module.css";
 
 type ClickableLineProps = {
 	formattedLine: FormattedLine;

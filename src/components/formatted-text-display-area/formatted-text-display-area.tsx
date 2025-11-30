@@ -1,8 +1,8 @@
 import { useFormat } from "../../hooks/useFormat";
-import { ClickableLine } from "../ClickableLine/ClickableLine";
-import { CodeMirrorEditor } from "../CodeMirrorEditor/CodeMirrorEditor";
-import { CopyButton } from "../CopyButton/CopyButton";
-import styles from "./FormattedTextDisplayArea.module.css";
+import { ClickableLine } from "../clickable-line/clickable-line";
+import { CodeMirrorEditor } from "../code-mirror-editor/code-mirror-editor";
+import { CopyButton } from "../copy-button/copy-button";
+import styles from "./formatted-text-display-area.module.css";
 
 export const FormattedTextDisplayArea = () => {
 	const { text, setText, formattedLines } = useFormat();
