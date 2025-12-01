@@ -2,7 +2,7 @@
 .textarea {
   grid-column-start: 1;
   grid-row-start: 2;
-  height: 32rem;
+  height: 40rem;
   padding: var(--spacing-md);
   color: var(--text-color-primary);
   background-color: var(--background-surface);
@@ -13,6 +13,6 @@
 
 @media (width < 768px) {
   .textarea {
-    height: 20rem;
+    height: 28rem;
   }
 }

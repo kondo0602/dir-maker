@@ -43,7 +43,7 @@
 }
 
 .formattedTextarea {
-  height: 32rem;
+  height: 40rem;
   padding: calc(var(--spacing-md) + 4px);
   color: var(--text-color-primary);
   background-color: var(--background-surface);
@@ -60,6 +60,6 @@
 
 @media (width < 768px) {
   .formattedTextarea {
-    height: 20rem;
+    height: 28rem;
   }
 }

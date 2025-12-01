@@ -7,6 +7,8 @@
 }
 
 .main {
+  display: grid;
+  align-content: center;
   width: min(100%, 1280px);
   margin-inline: auto;
   padding-block: var(--spacing-lg);
