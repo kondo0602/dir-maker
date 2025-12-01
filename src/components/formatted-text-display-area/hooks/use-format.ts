@@ -28,7 +28,13 @@ export const useFormat = () => {
 		defaultValue: DEFAULT_VALUE,
 	});
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const formattedText = formatTextAsDirectoryTree(debouncedValue ?? "").join("\n",);
+	const formattedText = formatTextAsDirectoryTree(debouncedValue ?? "").join("\n");
+	const resetText = () => setText(DEFAULT_VALUE);
 
-	return { text: text ?? "", setText, formattedText };
+	return {
+    text: text ?? "",
+    formattedText,
+    setText,
+    resetText,
+  };
 };
