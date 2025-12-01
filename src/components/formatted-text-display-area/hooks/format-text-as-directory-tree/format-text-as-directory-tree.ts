@@ -18,7 +18,7 @@ export const formatTextAsDirectoryTree = (
 		.map((line, index, array) => ({
 			...line,
 			isLast: isLastLine(line, array[index + 1], array.slice(index + 1)),
-			hasChildren: array.slice(index + 1).some((l) => l.depth > line.depth),
+			hasChildren: array[index + 1]?.depth > line.depth,
 		}))
 		.map((line, _, array) => {
 			const formatted = line.dirName.replace(
