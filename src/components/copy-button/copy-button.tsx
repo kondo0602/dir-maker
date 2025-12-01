@@ -31,7 +31,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ text }) => {
 			) : (
 				<>
 					<Copy size={14} />
-					<span>Copy Output</span>
+					<span>Copy</span>
 				</>
 			)}
 		</button>

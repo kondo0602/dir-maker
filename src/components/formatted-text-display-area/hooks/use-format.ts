@@ -13,10 +13,10 @@ const DEFAULT_VALUE = `/
   App.tsx
   index.css
   main.tsx
-  vite-env.d.ts
  .gitignore
  eslint.config.js
  index.html
+ package-lock.json
  package.json
  tsconfig.json
  vite.config.ts
