@@ -2,10 +2,18 @@ import { useFormat } from "./hooks/use-format";
 import { CodeMirrorEditor } from "../code-mirror-editor/code-mirror-editor";
 import { CopyButton } from "../copy-button/copy-button";
 import { ResetButton } from "../reset-button/reset-button";
+import { ToggleSwitch } from "../toggle-switch/toggle-switch";
 import styles from "./formatted-text-display-area.module.css";
 
 export const FormattedTextDisplayArea = () => {
-	const { text, setText, formattedText, resetText } = useFormat();
+	const {
+		text,
+		setText,
+		formattedText,
+		resetText,
+		addTrailingSlash,
+		setAddTrailingSlash,
+	} = useFormat();
 
 	return (
 		<div className={styles.wrapper}>
@@ -19,7 +27,14 @@ export const FormattedTextDisplayArea = () => {
 			<div className={styles.previewSection}>
 				<div className={styles.sectionHeader}>
 					<span className={styles.sectionLabel}>PREVIEW</span>
-					<CopyButton text={formattedText} />
+					<div className={styles.previewActions}>
+						<ToggleSwitch
+							label="Add trailing slash"
+							checked={addTrailingSlash}
+							onChange={setAddTrailingSlash}
+						/>
+						<CopyButton text={formattedText} />
+					</div>
 				</div>
 				<textarea
 					className={styles.formattedTextarea}

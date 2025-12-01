@@ -42,6 +42,12 @@
   letter-spacing: 0.05em;
 }
 
+.previewActions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
 .formattedTextarea {
   height: 40rem;
   padding: calc(var(--spacing-md) + 4px);
