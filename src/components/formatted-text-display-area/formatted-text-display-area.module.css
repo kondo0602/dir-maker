@@ -42,16 +42,6 @@
   letter-spacing: 0.05em;
 }
 
-.button {
-  flex-shrink: 0;
-}
-
-@media (width < 768px) {
-  .button {
-    display: none;
-  }
-}
-
 .formattedTextarea {
   height: 32rem;
   padding: calc(var(--spacing-md) + 4px);

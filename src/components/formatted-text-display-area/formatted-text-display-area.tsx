@@ -17,7 +17,7 @@ export const FormattedTextDisplayArea = () => {
 			<div className={styles.previewSection}>
 				<div className={styles.sectionHeader}>
 					<span className={styles.sectionLabel}>PREVIEW</span>
-					<CopyButton className={styles.button} text={formattedText} />
+					<CopyButton text={formattedText} />
 				</div>
 				<textarea
 					className={styles.formattedTextarea}

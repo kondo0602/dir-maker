@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { Check, Copy } from "lucide-react";
 import { type ComponentProps, type FC, useCallback, useState } from "react";
 import styles from "./copy-button.module.css";
@@ -7,7 +6,7 @@ type CopyButtonProps = ComponentProps<"button"> & {
 	text: string;
 };
 
-export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
+export const CopyButton: FC<CopyButtonProps> = ({ text }) => {
 	const [isCopied, setIsCopied] = useState(false);
 
 	const handleCopy = useCallback(() => {
@@ -20,7 +19,7 @@ export const CopyButton: FC<CopyButtonProps> = ({ className, text }) => {
 	return (
 		<button
 			type="button"
-			className={clsx(className, styles.button)}
+			className={styles.button}
 			data-copied={isCopied}
 			onClick={handleCopy}
 		>
