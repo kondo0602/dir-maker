@@ -1,6 +1,7 @@
-import { useDebounce } from "ahooks";
-import { useState } from "react";
+import { useDebounce, useLocalStorageState } from "ahooks";
 import { formatTextAsDirectoryTree } from "./format-text-as-directory-tree/format-text-as-directory-tree";
+
+const LOCAL_STORAGE_KEY = "DIR_MAKER_INPUT";
 
 const DEFAULT_VALUE = `/
  public
@@ -22,9 +23,12 @@ const DEFAULT_VALUE = `/
 `;
 
 export const useFormat = () => {
-	const [text, setText] = useState<string>(DEFAULT_VALUE);
+	const [text, setText] = useLocalStorageState(
+    LOCAL_STORAGE_KEY, {
+		defaultValue: DEFAULT_VALUE,
+	});
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const formattedText = formatTextAsDirectoryTree(debouncedValue).join("\n");
+	const formattedText = formatTextAsDirectoryTree(debouncedValue ?? "").join("\n",);
 
-	return { text, setText, formattedText };
+	return { text: text ?? "", setText, formattedText };
 };
