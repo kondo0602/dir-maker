@@ -6,7 +6,7 @@
   padding-block: 6px;
   font-size: 12px;
   color: var(--text-color-secondary);
-  background-color: var(--color-white);
+  background-color: var(--background-surface);
   border: 1px solid var(--border-color-gray);
   border-radius: var(--border-radius-sm);
   transition:

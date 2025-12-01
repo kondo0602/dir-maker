@@ -46,10 +46,9 @@
 
 .title {
   font-size: 20px;
-  font-weight: 700;
+  font-weight: bold;
   color: var(--text-color-primary);
   line-height: 1.2;
-  letter-spacing: -0.025em;
 }
 
 .subtitle {
@@ -68,11 +67,12 @@
 
 .iconButton {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   padding: var(--spacing-sm);
   color: var(--text-color-tertiary);
   border-radius: var(--border-radius-md);
+  cursor: pointer;
   transition: color var(--transition-duration-short), background-color var(--transition-duration-short);
 }
 

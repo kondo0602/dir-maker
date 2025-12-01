@@ -3,7 +3,7 @@
   grid-template-rows: auto 1fr;
   width: 100%;
   min-height: 100dvh;
-  background-color: var(--color-slate-50);
+  background-color: var(--background-page);
 }
 
 .main {

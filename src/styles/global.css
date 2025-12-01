@@ -1,63 +1,5 @@
-:root {
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-
-  --color-white: #fff;
-  --color-slate-50: #f8fafc;
-
-  --color-accent: #4f46e5;
-  --color-accent-light: rgba(99, 102, 241, 0.1);
-  --color-accent-border: rgba(99, 102, 241, 0.2);
-
-  --text-color-primary: #111827;
-  --text-color-secondary: #4b5563;
-  --text-color-tertiary: #6b7280;
-
-  --text-size-md: 18px;
-  --text-size-xl: 60px;
-
-  --font-weight-extra-bold: 800;
-
-  --background-hover: #f0f0f0;
-
-  --border-color-gray: #d1d5db;
-
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 12px;
-
-  --z-index-header: 10;
-
-  --transition-duration-short: 0.15s;
-  --transition-duration-long: 0.5s;
-
-  /* ヘッダー */
-  --header-background: rgba(255, 255, 255, 0.8);
-  --header-border: var(--border-color-gray);
-}
-
-:root[data-theme="dark"] {
-  --color-white: #0f172a;
-  --color-slate-50: #1e293b;
-
-  --color-accent: #818cf8;
-  --color-accent-light: rgba(129, 140, 248, 0.15);
-  --color-accent-border: rgba(129, 140, 248, 0.3);
-
-  --text-color-primary: #f1f5f9;
-  --text-color-secondary: #cbd5e1;
-  --text-color-tertiary: #94a3b8;
-
-  --background-hover: #334155;
-
-  --border-color-gray: #475569;
-
-  --header-background: rgba(15, 23, 42, 0.8);
-  --header-border: #334155;
-}
+@layer settings, generic, base, objects, vendors, components, utilities;
+@import "./variables.css" layer(settings);
 
 *,
 *::before,
@@ -75,7 +17,6 @@ body {
 
 button {
   all: unset;
-  cursor: pointer;
 }
 
 /* CodeMirror dark mode overrides */

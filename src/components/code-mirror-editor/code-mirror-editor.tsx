@@ -5,7 +5,7 @@ import styles from "./code-mirror-editor.module.css";
 
 const customStyle = EditorView.theme({
 	"&": {
-		backgroundColor: "var(--color-white)",
+		backgroundColor: "var(--background-surface)",
 		color: "var(--text-color-primary)",
 	},
 	"&.cm-focused": {
@@ -35,7 +35,7 @@ const customStyle = EditorView.theme({
 		backgroundColor: "var(--color-accent-light)",
 	},
 	".cm-gutters": {
-		backgroundColor: "var(--color-white)",
+		backgroundColor: "var(--background-surface)",
 		borderRight: "none",
 	},
 });
