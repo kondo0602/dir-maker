@@ -2,7 +2,7 @@ import { useDebounce } from "ahooks";
 import { useState } from "react";
 import { formatTextAsDirectoryTree } from "./format-text-as-directory-tree/format-text-as-directory-tree";
 
-const defaultValue = `/
+const DEFAULT_VALUE = `/
  public
   vite.svg
  src
@@ -22,9 +22,9 @@ const defaultValue = `/
 `;
 
 export const useFormat = () => {
-	const [text, setText] = useState<string>(defaultValue);
+	const [text, setText] = useState<string>(DEFAULT_VALUE);
 	const debouncedValue = useDebounce(text, { wait: 300 });
-	const formattedLines = formatTextAsDirectoryTree(debouncedValue);
+	const formattedText = formatTextAsDirectoryTree(debouncedValue).join("\n");
 
-	return { text, setText, formattedLines };
+	return { text, setText, formattedText };
 };

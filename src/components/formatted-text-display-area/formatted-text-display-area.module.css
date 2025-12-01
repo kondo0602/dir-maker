@@ -53,21 +53,23 @@
 }
 
 .formattedTextarea {
-  display: flex;
-  flex-direction: column;
-  height: 512px;
-  padding: var(--spacing-md);
+  height: 32rem;
+  padding: calc(var(--spacing-md) + 4px);
   color: var(--text-color-primary);
   background-color: var(--color-white);
   border: 1px solid var(--border-color-gray);
   border-radius: var(--border-radius-md);
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: inherit;
+  line-height: 1.4;
   white-space: pre;
   overflow: auto;
+  resize: none;
+  outline: none;
 }
 
 @media (width < 768px) {
   .formattedTextarea {
-    height: 320px;
+    height: 20rem;
   }
 }
