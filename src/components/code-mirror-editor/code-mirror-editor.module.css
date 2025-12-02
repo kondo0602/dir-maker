@@ -1,0 +1,18 @@
+
+.textarea {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  height: 40rem;
+  padding: var(--spacing-md);
+  color: var(--text-color-primary);
+  background-color: var(--background-surface);
+  border: 1px solid var(--border-color-gray);
+  border-radius: 0.5rem;
+  overflow-y: auto;
+}
+
+@media (width < 768px) {
+  .textarea {
+    height: 28rem;
+  }
+}
