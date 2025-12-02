@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-lg);
-  border-bottom: 1px solid var(--header-border);
-  background-color: var(--header-background);
+  border-bottom: 1px solid var(--border-color-gray);
+  background-color: var(--background-surface-translucent);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
